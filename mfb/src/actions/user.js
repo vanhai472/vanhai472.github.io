@@ -21,6 +21,27 @@ export const getUserActivityFailed = error => ({
   }
 });
 
+export const getPaymentMethod = params => ({
+  type: userConstant.GET_PAYMENT_METHOD,
+  payload: {
+    params
+  }
+});
+
+export const getPaymentMethodSuccess = data => ({
+  type: userConstant.GET_PAYMENT_METHOD_SUCCESS,
+  payload: {
+    data
+  }
+});
+
+export const getPaymentMethodFailed = error => ({
+  type: userConstant.GET_PAYMENT_METHOD_FAILED,
+  payload: {
+    error
+  }
+});
+
 export const getTypeServices = params => ({
   type: userConstant.GET_TYPE_SERVICES,
   payload: {
@@ -117,6 +138,44 @@ export const advertisingInstagramSuccess = data => ({
 });
 export const advertisingInstagramFailed = error => ({
   type: userConstant.ADVERTISING_INSTAGRAMFAILED,
+  payload: {
+    error
+  }
+});
+
+export const buffFollowV2 = params => ({
+  type: userConstant.BUF_FOLLOW_V2,
+  payload: {
+    params
+  }
+});
+export const buffFollowV2Success = data => ({
+  type: userConstant.BUF_FOLLOW_V2SUCCESS,
+  payload: {
+    data
+  }
+});
+export const buffFollowV2Failed = error => ({
+  type: userConstant.BUF_FOLLOW_V2FAILED,
+  payload: {
+    error
+  }
+});
+
+export const buffVideoV2 = params => ({
+  type: userConstant.BUFF_VIDEO_V2,
+  payload: {
+    params
+  }
+});
+export const buffVideoV2Success = data => ({
+  type: userConstant.BUFF_VIDEO_V2SUCCESS,
+  payload: {
+    data
+  }
+});
+export const buffVideoV2Failed = error => ({
+  type: userConstant.BUFF_VIDEO_V2FAILED,
   payload: {
     error
   }

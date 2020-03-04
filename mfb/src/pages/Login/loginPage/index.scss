@@ -1,14 +1,14 @@
-.wraper-login {
-  background-image: url(/banner.png);
+.background {
+  background: url(/banner.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   min-height: 100vh;
 }
-.login-form {
-  width: 330px;
-  margin-top: 80px;
-}
+
 .input-login {
-  width: 65%;
+  width: 100%;
 }
 .remember {
   margin: 0 50px 0 10px;
@@ -23,9 +23,7 @@
 .wraper-create {
   margin-top: 15px;
 }
-.background {
-  background-color: #e9e8e8;
-}
+
 .none {
   display: none;
 }

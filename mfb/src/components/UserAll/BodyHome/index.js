@@ -48,7 +48,7 @@ class BodyPageReport extends React.Component {
             >
               <Statistic
                 title="Số dư"
-                value={dataBalance.balance}
+                value={dataBalance?.balance}
                 precision={2}
                 valueStyle={{ color: "#3f8600" }}
                 prefix={<Icon type="credit-card" />}
@@ -65,7 +65,7 @@ class BodyPageReport extends React.Component {
             >
               <Statistic
                 title="Tổng đã nạp"
-                value={dataBalance.total_deposit}
+                value={dataBalance?.total_deposit}
                 precision={2}
                 valueStyle={{ color: "#3f8600" }}
                 prefix={<Icon type="credit-card" />}

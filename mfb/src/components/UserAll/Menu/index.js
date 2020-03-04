@@ -15,7 +15,7 @@ class MenuVertical extends React.Component {
       this.props.history.push("/dashboard");
     }
     if (key === "report") {
-      this.props.history.push("/dashboard-report");
+      this.props.history.push("/dashboard");
     }
     if (key === "bufLikeCommentShare") {
       this.props.history.push("/buff-facebook");

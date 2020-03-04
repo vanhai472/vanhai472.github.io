@@ -3,11 +3,11 @@ import { Form, Tabs } from "antd";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators, compose } from "redux";
+import BuffViewVideo from "../BuffViewVideo";
 import * as userAction from "../../../actions/user";
 import FormCreateFacebook from "../formCreateFacebook";
 import { AUTHORIZATION_KEY } from "../../../constants";
 import "./index.scss";
-import FormVideo from "../formVideo";
 
 const { TabPane } = Tabs;
 const width = window.innerWidth;
@@ -25,6 +25,15 @@ class BuffLikeCommentSharePage extends React.Component {
       search += "seeding=buff-facebook";
       this.props.history.push(search);
     }
+    const { token } = this.state;
+    const { userAction } = this.props;
+    const { getTypeServices } = userAction;
+    if (getTypeServices) {
+      const params = {
+        token
+      };
+      getTypeServices(params);
+    }
   }
   callback = key => {
     let search = "?";
@@ -33,6 +42,7 @@ class BuffLikeCommentSharePage extends React.Component {
     const { form } = this.props;
     form.resetFields();
   };
+
   render() {
     const { form } = this.props;
     return (
@@ -46,33 +56,47 @@ class BuffLikeCommentSharePage extends React.Component {
           tab={<h4 className="title-pane">Buff Like, Comment, Share Post</h4>}
           key="buff-facebook"
         >
-          <FormCreateFacebook form={form} />
+          <FormCreateFacebook
+            form={form}
+            datatTypeServices={this.props?.datatTypeServices}
+          />
         </TabPane>
         <TabPane
           tab={<h4 className="title-pane">Buff Sub (Tăng Theo Dõi) Profile</h4>}
           key="buff-seeding-sub-order"
         >
-          <FormCreateFacebook form={form} />
+          <FormCreateFacebook
+            form={form}
+            datatTypeServices={this.props?.datatTypeServices}
+          />
         </TabPane>
         <TabPane
           tab={<h4 className="title-pane">Buff Like Fanpage Order</h4>}
           key="buff-seeding-like-fanpage-order"
         >
-          <FormCreateFacebook form={form} />
+          <FormCreateFacebook
+            form={form}
+            datatTypeServices={this.props?.datatTypeServices}
+          />
         </TabPane>
-         <TabPane
-              tab={<h4 className="title-pane">Buff sub v2</h4>}
-              key="buff-view-v2"
-              onClick={()=> this.changeStateLink()}
-            >
-              <FormVideo />
-            </TabPane> 
-            <TabPane
-              tab={<h4 className="title-pane">Buff View Video</h4>}
-              key="buff-view-video"
-            >
-              <FormVideo />
-            </TabPane> 
+        <TabPane
+          tab={<h4 className="title-pane">Buff Sub v2</h4>}
+          key="buff-seeding-subv2"
+        >
+          <BuffViewVideo
+            form={form}
+            datatTypeServices={this.props?.datatTypeServices}
+          />
+        </TabPane>
+        <TabPane
+          tab={<h4 className="title-pane">Buff View Video</h4>}
+          key="buff-seeding-view-video"
+        >
+          <BuffViewVideo
+            form={form}
+            datatTypeServices={this.props?.datatTypeServices}
+          />
+        </TabPane>
       </Tabs>
     );
   }

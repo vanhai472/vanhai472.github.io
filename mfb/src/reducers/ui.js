@@ -1,6 +1,6 @@
 import * as types from "../constants/ui";
 const initialState = {
-  show_loading: false,
+  show_loading: false
 };
 const UiReducer = (state = initialState, action) => {
   switch (action.type) {

@@ -17,15 +17,15 @@ import ForgotEmail from "../pages/Login/forgotEmail";
 import ResetPassword from "../pages/Login/resetPassword";
 
 export const ADMIN_ROUTES = [
+  // {
+  //   name: "Home",
+  //   path: "/dashboard",
+  //   exact: true,
+  //   component: PageReport
+  // },
   {
     name: "Home",
     path: "/dashboard",
-    exact: true,
-    component: PageReport
-  },
-  {
-    name: "Report",
-    path: "/dashboard-report",
     exact: true,
     component: HomeReport
   },

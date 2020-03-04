@@ -41,24 +41,12 @@ class FormCreateFacebook extends React.Component {
     typeSelectText: "like"
   };
 
-  componentDidMount() {
-    const { token } = this.state;
-    const { userAction } = this.props;
-    const { getTypeServices } = userAction;
-    if (getTypeServices) {
-      const params = {
-        token
-      };
-      getTypeServices(params);
-    }
-  }
   handleSubmit = e => {
     e.preventDefault();
     const { form } = this.props;
     const { token, urlLink, quantity } = this.state;
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
-        console.log("Received values of form: ", values);
         const paramUrl = queryString.parse(this.props.location.search);
         if (form.getFieldValue("typeSelect") === "comment") {
           values.type = "comment";
@@ -189,6 +177,21 @@ class FormCreateFacebook extends React.Component {
     }
   };
 
+  renderTitle = () => {
+    let title = "";
+    const paramUrl = queryString.parse(this.props.location.search);
+    if (paramUrl && paramUrl?.seeding === "buff-facebook") {
+      title = "Buff Like, Comment, Share Post";
+    }
+    if (paramUrl && paramUrl?.seeding === "buff-seeding-sub-order") {
+      title = "Buff Sub (Tăng Theo Dõi) Profile";
+    }
+    if (paramUrl && paramUrl?.seeding === "buff-seeding-like-fanpage-order") {
+      title = "Buff Like Fanpage Order";
+    }
+    return title;
+  };
+
   render() {
     const { quantity, typeSelectText } = this.state;
     const { form, show_loading } = this.props;
@@ -211,7 +214,7 @@ class FormCreateFacebook extends React.Component {
     const paramUrl = queryString.parse(this.props.location.search);
     return (
       <Card
-        title={<h3>Buff Like, Comment, Share Post</h3>}
+        title={<h3>{this.renderTitle()}</h3>}
         hoverable
         bordered
         style={{ borderRadius: 20, marginBottom: "20px" }}
@@ -221,7 +224,7 @@ class FormCreateFacebook extends React.Component {
           <TabPane tab={<p className="tag-title">Tạo tiến trình</p>} key="1">
             <Row gutter={20}>
               <Col xl={16} md={24}>
-               <Card
+                <Card
                   hoverable
                   bordered
                   bodyStyle={{ paddingTop: "20px" }}
@@ -234,7 +237,7 @@ class FormCreateFacebook extends React.Component {
                   >
                     <Form.Item
                       label={<span className="txtLabel">Link hoặc ID</span>}
-                       hasFeedback
+                      hasFeedback
                       help={
                         paramUrl &&
                         paramUrl?.seeding ===
@@ -478,8 +481,9 @@ class FormCreateFacebook extends React.Component {
                         >
                           <Text type="warning" strong>
                             {" "}
-                            Mẹo nhỏ: Hệ thống ưu tiên chạy các job giá cao trước
-                            nên nếu bạn.
+                            Hệ thống ưu tiên chạy các job giá cao trước nên nếu
+                            bạn cần gấp bạn có thể set giá job của mình cao hơn
+                            1 vài đồng để chạy nhanh nhất có thể nhé.
                           </Text>
                         </Card>
                       }
@@ -627,8 +631,7 @@ class FormCreateFacebook extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  show_loading: state.ui.show_loading,
-  datatTypeServices: state.user.datatTypeServices
+  show_loading: state.ui.show_loading
 });
 
 const mapDispatchToProps = dispatch => ({

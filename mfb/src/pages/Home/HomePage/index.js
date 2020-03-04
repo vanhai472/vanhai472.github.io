@@ -32,27 +32,27 @@ class HomeReport extends React.Component {
             <TabPane tab={<h4 className="title-pane ">Nạp tiền</h4>} key="2">
               <RechargePage />
             </TabPane>
-            <TabPane tab={<h4 className="title-pane ">Báo cáo</h4>} key="3">
+            {/* <TabPane tab={<h4 className="title-pane ">Báo cáo</h4>} key="3">
               <ReportPage />
-            </TabPane>
-            <TabPane
+            </TabPane> */}
+            {/* <TabPane
               tab={<h4 className="title-pane ">Lịch sử hoàn tiền</h4>}
               key="4"
             >
               <RefundLogsPage />
-            </TabPane>
-            <TabPane
+            </TabPane> */}
+            {/* <TabPane
               tab={<h4 className="title-pane ">Tích hợp Site đại lý</h4>}
               key="5"
             >
               <ApiManagerPage />
-            </TabPane>
-            <TabPane
+            </TabPane> */}
+            {/* <TabPane
               tab={<h4 className="title-pane ">liên hệ hỗ trợ</h4>}
               key="6"
             >
               <Social />
-            </TabPane>
+            </TabPane> */}
           </Tabs>
         </Col>
         <Col md={24} xl={6}>

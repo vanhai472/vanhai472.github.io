@@ -126,7 +126,7 @@ class FormCreateInstagram extends React.Component {
       form.getFieldValue("quantity");
     return (
       <Card
-        title={<h3>Buff Like Instagram</h3>}
+        title={<h3>Buff Like/Sub Instagram</h3>}
         hoverable
         bordered
         style={{ borderRadius: 20, marginBottom: "20px" }}
@@ -147,28 +147,8 @@ class FormCreateInstagram extends React.Component {
                     labelAlign="left"
                     onSubmit={this.handleSubmit}
                   >
-                  <Form.Item
+                    <Form.Item
                       label={<span className="txtLabel">Link hoặc ID</span>}
-                       hasFeedback
-                      help={
-                        paramUrl &&
-                        paramUrl?.seeding ===
-                          "buff-seeding-like-fanpage-order" ? (
-                          <span className="txt-help">
-                            Vui lòng kiểm tra Fanpage có thể tăng Like được
-                            không theo Video hướng dẫn dưới đây trước khi Order{" "}
-                            <a
-                              className="link-help"
-                              href="https://www.youtube.com/watch?v=QQKPrJry9md"
-                              target={"_blank"}
-                            >
-                              Cick Tại Đây Để Xem Video Hướng Dẫn
-                            </a>
-                          </span>
-                        ) : (
-                          ""
-                        )
-                      }
                     >
                       {getFieldDecorator("link", {
                         rules: [
@@ -181,7 +161,7 @@ class FormCreateInstagram extends React.Component {
                         onChange: this.handleChangeLink
                       })(
                         <Input
-                          // autoFocus
+                          autoFocus
                           type="text"
                           className="input-blue"
                           size="large"

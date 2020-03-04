@@ -2,7 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators, compose } from "redux";
-import { Form, Icon, Input, Button, Row, Col, Card} from "antd";
+import { Form, Icon, Input, Button, Row, Col, Card } from "antd";
 import * as authAction from "../../../actions/auth";
 
 class SignUpPage extends React.Component {
@@ -11,7 +11,7 @@ class SignUpPage extends React.Component {
     this.state = {
       showLoading: false,
       confirmDirty: false,
-    autoCompleteResult: []
+      autoCompleteResult: []
     };
   }
   handleSubmit = e => {
@@ -40,8 +40,8 @@ class SignUpPage extends React.Component {
   };
   compareToFirstPassword = (rule, value, callback) => {
     const { form } = this.props;
-    if (value && value !== form.getFieldValue('password')) {
-      callback('Two passwords that you enter is inconsistent!');
+    if (value && value !== form.getFieldValue("password")) {
+      callback("Two passwords that you enter is inconsistent!");
     } else {
       callback();
     }
@@ -50,7 +50,7 @@ class SignUpPage extends React.Component {
   validateToNextPassword = (rule, value, callback) => {
     const { form } = this.props;
     if (value && this.state.confirmDirty) {
-      form.validateFields(['confirm'], { force: true });
+      form.validateFields(["confirm"], { force: true });
     }
     callback();
   };
@@ -60,7 +60,9 @@ class SignUpPage extends React.Component {
     if (!value) {
       autoCompleteResult = [];
     } else {
-      autoCompleteResult = ['.com', '.org', '.net'].map(domain => `${value}${domain}`);
+      autoCompleteResult = [".com", ".org", ".net"].map(
+        domain => `${value}${domain}`
+      );
     }
     this.setState({ autoCompleteResult });
   };
@@ -137,7 +139,12 @@ class SignUpPage extends React.Component {
                       validator: this.compareToFirstPassword
                     }
                   ]
-                })(<Input.Password onBlur={this.handleConfirmBlur} placeholder="Nhập lại mật khẩu" />)}
+                })(
+                  <Input.Password
+                    onBlur={this.handleConfirmBlur}
+                    placeholder="Nhập lại mật khẩu"
+                  />
+                )}
               </Form.Item>
               {getFieldDecorator("remember", {
                 valuePropName: "checked",
@@ -158,9 +165,12 @@ class SignUpPage extends React.Component {
               </div>
               <div className="wraper-create">
                 <span className="no-acount">Đã có tài khoản</span>{" "}
-                <a href="##" onClick={() => this.props.history.push("/login")}>
+                <span
+                  className="span-signup"
+                  onClick={() => this.props.history.push("/login")}
+                >
                   Đăng nhập?
-                </a>
+                </span>
               </div>
             </Form>
           </Card>

@@ -11,7 +11,13 @@ import {
   getInfoFailed,
   getInfoSuccess,
   getBalanceFailed,
-  getBalanceSuccess
+  getBalanceSuccess,
+  getPaymentMethodFailed,
+  getPaymentMethodSuccess,
+  buffFollowV2Failed,
+  buffFollowV2Success,
+  buffVideoV2Failed,
+  buffVideoV2Success
 } from "../actions/user";
 import { showLoading, hideLoading } from "../actions/ui";
 import {
@@ -20,7 +26,10 @@ import {
   advertisingCreateFacebook,
   advertisingCreateInstagram,
   getInfo,
-  getBalance
+  getBalance,
+  getPaymentMethod,
+  createBuffFollowV2,
+  createBuffVideoV2
 } from "../apis/user";
 import { STATUS_CODE } from "../constants";
 import * as types from "../constants/user";
@@ -76,6 +85,25 @@ function* watchGetInfo({ payload }) {
     }
   } catch (error) {
     yield put(getInfoFailed(error));
+  } finally {
+    yield delay(1000);
+    yield put(hideLoading());
+  }
+}
+
+function* watchGetPaymentMethod({ payload }) {
+  const { params } = payload;
+  yield put(showLoading());
+  try {
+    const resp = yield call(getPaymentMethod, params);
+    const { data, status } = resp;
+    if (status === STATUS_CODE.SUCCESS) {
+      yield put(getPaymentMethodSuccess(data));
+    } else {
+      yield put(getPaymentMethodFailed(data));
+    }
+  } catch (error) {
+    yield put(getPaymentMethodFailed(error));
   } finally {
     yield delay(1000);
     yield put(hideLoading());
@@ -139,12 +167,53 @@ function* watchCreateFacebook({ payload }) {
   }
 }
 
+function* watchCreateBuffFollowv2({ payload }) {
+  const { params } = payload;
+  yield put(showLoading());
+  try {
+    const resp = yield call(createBuffFollowV2, params);
+    const { data, status } = resp;
+    if (status === STATUS_CODE.SUCCESS) {
+      yield put(buffFollowV2Success(data));
+    } else {
+      yield put(buffFollowV2Failed(data));
+    }
+  } catch (error) {
+    yield put(buffFollowV2Failed(error));
+  } finally {
+    yield delay(1000);
+    yield put(hideLoading());
+  }
+}
+
+function* watchCreateBuffVideov2({ payload }) {
+  const { params } = payload;
+  yield put(showLoading());
+  try {
+    const resp = yield call(createBuffVideoV2, params);
+    const { data, status } = resp;
+    if (status === STATUS_CODE.SUCCESS) {
+      yield put(buffVideoV2Success(data));
+    } else {
+      yield put(buffVideoV2Failed(data));
+    }
+  } catch (error) {
+    yield put(buffVideoV2Failed(error));
+  } finally {
+    yield delay(1000);
+    yield put(hideLoading());
+  }
+}
+
 function* userSaga() {
   yield takeLatest(types.GET_USER_ACTIVITY, watchFetchUserActivity);
   yield takeLatest(types.GET_INFO, watchGetInfo);
+  yield takeLatest(types.GET_PAYMENT_METHOD, watchGetPaymentMethod);
   yield takeLatest(types.GET_BALANCE, watchGetBalance);
   yield takeLatest(types.GET_TYPE_SERVICES, watchGetTypeService);
   yield takeLatest(types.ADVERTISING, watchCreateFacebook);
+  yield takeLatest(types.BUF_FOLLOW_V2, watchCreateBuffFollowv2);
+  yield takeLatest(types.BUFF_VIDEO_V2, watchCreateBuffVideov2);
   yield takeLatest(types.ADVERTISING_INSTAGRAM, watchCreateInstagram);
 }
 

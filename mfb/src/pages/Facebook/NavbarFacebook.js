@@ -9,7 +9,6 @@ import { USERNAME, EMAIL } from "../../constants";
 const { Meta } = Card;
 class NavbarFacebook extends React.Component {
   render() {
-    const { dataLogin } = this.props;
     return (
       <>
         <div className="wrraperNavbarFaceebook">

@@ -31,6 +31,15 @@ export const getTypeServices = params => {
   return axiosService.get(`${API_ENDPOINT}/get-type-services${paramurl}`);
 };
 
+export const getPaymentMethod = params => {
+  const { token } = params;
+  let paramurl = "";
+  if (token) {
+    paramurl += `?api_token=${token}&`;
+  }
+  return axiosService.get(`${API_ENDPOINT}/get-payment-method${paramurl}`);
+};
+
 export const getInfo = params => {
   const { token } = params;
   let paramurl = "";
@@ -56,6 +65,20 @@ export const advertisingCreateFacebook = data => {
 export const advertisingCreateInstagram = data => {
   return axiosService.post(
     `${API_ENDPOINT}/advertising/create-buff-instagram`,
+    data
+  );
+};
+
+export const createBuffFollowV2 = data => {
+  return axiosService.post(
+    `${API_ENDPOINT}/advertising/create-buff-follow-v2`,
+    data
+  );
+};
+
+export const createBuffVideoV2 = data => {
+  return axiosService.post(
+    `${API_ENDPOINT}/advertising/create-buff-video-v2`,
     data
   );
 };

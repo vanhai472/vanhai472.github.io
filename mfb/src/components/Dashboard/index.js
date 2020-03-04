@@ -13,8 +13,8 @@ class Dashboard extends Component {
     if (key === "dashboard") {
       this.props.history.push("/dashboard");
     }
-    if (key === "dashboard-report") {
-      this.props.history.push("/dashboard-report");
+    if (key === "dashboard") {
+      this.props.history.push("/dashboard");
     }
     if (key === "buff-facebook") {
       this.props.history.push("/buff-facebook");
@@ -46,13 +46,13 @@ class Dashboard extends Component {
             width: "100%"
           }}
         >
+          {/* <Menu.Item key="dashboard">
+            <Icon type="bank" className="icon-menu" />
+            <span className="txt-menu">Home</span>
+          </Menu.Item> */}
           <Menu.Item key="dashboard">
             <Icon type="bank" className="icon-menu" />
             <span className="txt-menu">Home</span>
-          </Menu.Item>
-          <Menu.Item key="dashboard-report">
-            <Icon type="issues-close" className="icon-menu" />
-            <span className="txt-menu">Report</span>
           </Menu.Item>
           <Menu.Item key="buff-facebook">
             <Icon type="facebook" className="icon-menu" />

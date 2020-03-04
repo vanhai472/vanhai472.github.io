@@ -1,13 +1,33 @@
 import React from "react";
 import { Row, Col, Card, Alert } from "antd";
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { bindActionCreators, compose } from "redux";
 import ScrewMoney from "../../Home/ScrewMoney";
+import * as userAction from "../../../actions/user";
+import { AUTHORIZATION_KEY } from "../../../constants";
 
 class RechargeUser extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      token: localStorage.getItem(AUTHORIZATION_KEY)
+    };
+  }
+  componentDidMount() {
+    const { token } = this.state;
+    const { userAction } = this.props;
+    const { getPaymentMethod } = userAction;
+    if (getPaymentMethod) {
+      const params = {
+        token
+      };
+      getPaymentMethod(params);
+    }
   }
   render() {
+    const { dataPayment } = this.props;
+    console.log("111", dataPayment);
     return (
       <Row>
         <Col md={24} xl={18}>
@@ -51,10 +71,19 @@ class RechargeUser extends React.Component {
                     </Col>
                     <Col className="right">
                       {" "}
-                      <p className=" ">0531002584992</p>
-                      <p className=" ">Phan Le Chi</p>
-                      <p className=" ">Vietcombank</p>
-                      <p className=" ">Bình Thạnh TPHCM</p>
+                      <p className="txt-bold">
+                        {dataPayment[1]?.number_account ||
+                          "Không tìm thấy thông tin"}
+                      </p>
+                      <p className="txt-bold">
+                        {dataPayment[1]?.name || "Không tìm thấy thông tin"}
+                      </p>
+                      <p className="txt-bold">
+                        {dataPayment[1]?.method || "Không tìm thấy thông tin"}
+                      </p>
+                      <p className="txt-bold">
+                        {dataPayment[1]?.branch || "Không tìm thấy thông tin"}
+                      </p>
                     </Col>
                   </Row>
                 </Card>
@@ -70,17 +99,20 @@ class RechargeUser extends React.Component {
                   <Row type="flex" justify="space-between">
                     <Col className="left">
                       {" "}
-                      <p className="inbl">Số tài khoản:</p>
+                      <p className="inbl">Số điện thoại:</p>
                       <p className="inbl">Tên tài khoản:</p>
-                      <p className="inbl">Ngân hàng:</p>
-                      <p className="inbl">Chi Nhánh:</p>
                     </Col>
                     <Col className="right">
                       {" "}
-                      <p className=" ">0531002584992</p>
-                      <p className=" ">Phan Le Chi</p>
-                      <p className=" ">Vietcombank</p>
-                      <p className=" ">Bình Thạnh TPHCM</p>
+                      <p className="txt-bold">
+                        {" "}
+                        {dataPayment[0]?.number_phone ||
+                          "Không tìm thấy thông tin"}
+                      </p>
+                      <p className="txt-bold">
+                        {" "}
+                        {dataPayment[0]?.name || "Không tìm thấy thông tin"}
+                      </p>
                     </Col>
                   </Row>
                 </Card>
@@ -90,7 +122,7 @@ class RechargeUser extends React.Component {
               message={
                 <h3 className="contentTransfer">Nội dung chuyển khoản</h3>
               }
-              description={<h3 className="userName">mfb userName</h3>}
+              description={null}
               type="info"
             />
           </Card>
@@ -103,4 +135,13 @@ class RechargeUser extends React.Component {
   }
 }
 
-export default RechargeUser;
+const mapStateToProps = state => ({
+  show_loading: state.ui.show_loading,
+  dataPayment: state.user.dataPayment
+});
+
+const mapDispatchToProps = dispatch => ({
+  userAction: bindActionCreators(userAction, dispatch)
+});
+const withConnect = connect(mapStateToProps, mapDispatchToProps);
+export default compose(withConnect)(withRouter(RechargeUser));

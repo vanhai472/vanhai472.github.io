@@ -4,7 +4,7 @@ const initialState = {
   isLoadingUser: true,
   dataUserActivity: {},
   datatTypeServices: [],
-  dataInfo: {},
+  dataPayment: {},
   dataBalance: {}
 };
 
@@ -64,6 +64,24 @@ const reducer = (state = initialState, action) => {
       };
     }
 
+    case types.GET_PAYMENT_METHOD: {
+      return {
+        ...state
+      };
+    }
+    case types.GET_PAYMENT_METHOD_SUCCESS: {
+      const { data } = action.payload;
+      return {
+        ...state,
+        dataPayment: [...data]
+      };
+    }
+    case types.GET_PAYMENT_METHOD_FAILED: {
+      return {
+        ...state
+      };
+    }
+
     case types.GET_BALANCE: {
       return {
         ...state
@@ -100,6 +118,50 @@ const reducer = (state = initialState, action) => {
         "error",
         "Thông báo",
         error?.response?.data?.description || error?.response?.data?.message
+      );
+      return {
+        ...state
+      };
+    }
+
+    case types.BUF_FOLLOW_V2: {
+      return {
+        ...state
+      };
+    }
+    case types.BUF_FOLLOW_V2SUCCESS: {
+      openNotification("success", "Thông báo", "Tăng Sub thành công");
+      return {
+        ...state
+      };
+    }
+    case types.BUF_FOLLOW_V2FAILED: {
+      openNotification(
+        "error",
+        "Thông báo",
+        "Server tạm thời bảo trì ! Xin thử lại sau ."
+      );
+      return {
+        ...state
+      };
+    }
+
+    case types.BUFF_VIDEO_V2: {
+      return {
+        ...state
+      };
+    }
+    case types.BUFF_VIDEO_V2SUCCESS: {
+      openNotification("success", "Thông báo", "Tăng View thành công");
+      return {
+        ...state
+      };
+    }
+    case types.BUFF_VIDEO_V2FAILED: {
+      openNotification(
+        "error",
+        "Thông báo",
+        "Server tạm thời bảo trì ! Xin thử lại sau ."
       );
       return {
         ...state

@@ -109,7 +109,7 @@ const reducer = (state = initialState, action) => {
     case types.CHANGEPASSWORDFAILED: {
       const { error } = action.payload;
       openNotification(
-        "success",
+        "error",
         "Thông báo",
         error?.response?.data?.description || error?.response?.data?.message
       );

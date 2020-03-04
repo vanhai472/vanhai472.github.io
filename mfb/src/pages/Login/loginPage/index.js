@@ -26,20 +26,20 @@ class LoginPage extends React.Component {
     const { show_loading } = this.props;
     const { getFieldDecorator } = this.props.form;
     return (
-      <Row className="background">
-        <Col md={24} xl={15}>
-          <div className="wraper-login"></div>
-        </Col>
-        <Col md={24} xl={9}>
+      <Row className="background" gutter={18} justify="center">
+        <Col>
           <Card
             title="Đăng Nhập"
             bordered={false}
             style={{
-              width: 380,
-              background: "rgb(242,242,242)",
+              // background: "#177593fa",
               borderRadius: 15,
-              marginTop: 100,
-              marginLeft: 80
+              opacity: ".9",
+              position: "fixed",
+              top: "50%",
+              left: "50%",
+              marginRight: " -50%",
+              transform: "translate(-50%, -50%)"
             }}
             className="wraper-form"
           >

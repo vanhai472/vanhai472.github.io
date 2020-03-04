@@ -36,6 +36,12 @@ class historyPage extends Component {
     ) {
       params.provider = "instagram";
     }
+    if (paramUrl && paramUrl?.seeding === "buff-seeding-subv2") {
+      params.type = "sub_v2";
+    }
+    if (paramUrl && paramUrl?.seeding === "buff-seeding-view-video") {
+      params.type = "video_v2";
+    }
     const { userAction } = this.props;
     const { getUserActivity } = userAction;
     if (getUserActivity) {
