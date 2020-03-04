@@ -1,0 +1,49 @@
+
+.wraper-menu{
+    width: 90px;
+    position: fixed;
+    top: 20px;
+    left: 10px;
+    position: relative; 
+    z-index: 9999;
+}
+.icon{
+    display: block;
+     font-size: 23px !important;
+     color: rgb(214, 214, 214) !important;
+    padding: 10px;
+    margin: 0px !important;
+}
+.wraper-icon{
+     border: 2px solid #d6d6d6;
+     border-radius: 5px;
+}
+.li-menu{
+    text-align: center;
+    height: 70px !important;
+    padding-left: 16px !important;
+}
+.wraper-icon:hover .icon{
+    color: white !important;
+}
+.wraper-icon:hover{
+    background-color: #1890ff;
+    border: 2px solid #1890ff;
+}
+.wraper-icon:hover .title-icon{
+    color: #1890ff !important;
+
+}
+.li-menu:hover .title-icon{
+    color: #1890ff;
+}
+.title-icon{
+    font-size: 11px;
+    position: relative;
+    top: -10px;
+}
+
+
+.active{
+    background-color: blue;
+}

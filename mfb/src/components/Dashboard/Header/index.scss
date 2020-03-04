@@ -1,0 +1,44 @@
+.reportMoney {
+  display: inline-block;
+  // margin-left: 28px;
+  text-align: right;
+}
+
+.firstChild {
+  margin-left: 82px;
+}
+.lastChild {
+  margin-right: 0px;
+}
+.money {
+  background-color: #f2f2f2;
+  width: 30%;
+  display: inline-block;
+  margin: 0px 16px;
+  border-radius: 10px;
+}
+.icon-reportPage {
+  margin-left: 20px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  margin-right: 50px;
+  padding-left: 5px;
+}
+.title-reportMoney {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 5px;
+  text-align: right;
+  padding-right: 10px;
+}
+.number {
+  margin-left: 125px;
+  color: #1890ff;
+  font-weight: 800;
+  font-size: 30px;
+}
+.lastChild {
+  margin-right: 0px;
+}

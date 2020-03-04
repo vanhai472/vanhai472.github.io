@@ -1,0 +1,162 @@
+@font-face {
+  font-family: Dancing;
+  src: url("fonts/DancingScript-Regular.ttf"); }
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  color: black; }
+
+.container {
+  width: 1140px;
+  margin: 0 auto; }
+
+.clearfix {
+  content: "";
+  display: table;
+  clear: both; }
+
+.font-text {
+  font-family: Dancing; }
+
+.backg-social .social .item-social {
+  margin: 0px 15px; }
+.backg-social .social .item-social:hover {
+  width: 48px;
+  height: 45px; }
+.backg-social .logo .logo-REACH {
+  width: 100px; }
+.backg-social .logo .we-love {
+  color: #007784;
+  font-family: Dancing;
+  margin-bottom: 0px !important; }
+.backg-social .logo .heart {
+  position: relative;
+  width: 30px;
+  height: 50px;
+  margin-bottom: 10px;
+  right: 366px;
+  font-size: 50px;
+  color: red;
+  animation: heart 4s infinite; }
+@keyframes heart {
+  0% {
+    font-size: 50px; }
+  25% {
+    font-size: 55px; }
+  50% {
+    font-size: 50px; }
+  75% {
+    font-size: 55px; }
+  100% {
+    font-size: 50px; } }
+.item-overcome {
+  border: 1px solid wheat;
+  width: 100%;
+  margin-bottom: 10px; }
+
+.tab-news {
+  bottom: 0px;
+  border: none; }
+
+.wishes {
+  position: relative;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  border-radius: 8px; }
+  .wishes form {
+    border: 1px solid wheat; }
+    .wishes form label {
+      display: block;
+      padding-left: 20px;
+      margin-bottom: 0px !important;
+      margin-top: 12px; }
+      .wishes form label .mr-top {
+        margin-top: 0px;
+        font-size: 2.5rem;
+        color: white; }
+    .wishes form .first-top {
+      margin-top: 0px; }
+    .wishes form input {
+      border-radius: 8px;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: 1px solid #887463;
+      padding: 5px 300px 5px 23px;
+      width: 100%; }
+    .wishes form .Figure {
+      width: 100%;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: 1px solid #887463;
+      padding: 5px 300px 5px 23px;
+      border-radius: 8px; }
+      .wishes form .Figure option {
+        background: #ffd24f;
+        border-radius: 8px; }
+    .wishes form .the-course {
+      width: 100%; }
+    .wishes form .item-role {
+      margin-left: 20px; }
+    .wishes form textarea {
+      font-family: Dancing;
+      border-radius: 8px;
+      padding-left: 23px;
+      border-top: none;
+      border: 1px solid #887463;
+      width: 100%;
+      font-size: 25px; }
+    .wishes form button {
+      width: 70%;
+      margin-bottom: 20px;
+      padding: 3px 0;
+      border: none;
+      border-radius: 5px;
+      background: rgba(0, 173, 236, 0.85) !important;
+      width: 100%; }
+
+.bg-out {
+  background: rgba(0, 173, 236, 0.85); }
+  .bg-out .happy {
+    border-radius: 8px;
+    position: sticky; }
+    .bg-out .happy #happy-teacher {
+      text-shadow: 3px 2px #b3e888, 3px 2px #e89719, 3px 2px #ffd24f;
+      animation-name: example;
+      animation: myanimation 20s infinite;
+      color: white; }
+@keyframes myanimation {
+  0% {
+    text-shadow: 2px 1px #b3e888, 2px 1px #e89719, 2px 1px #ffd24f; }
+  25% {
+    text-shadow: 4px 2px green, 4px 2px #0ca2d4, 4px 2px red;
+    color: #b32317; }
+  50% {
+    text-shadow: 2px 1px #b3e888, 2px 1px #e89719, 2px 1px #ffd24f; }
+  75% {
+    text-shadow: 4px 2px green, 4px 2px #0ca2d4, 4px 2px red;
+    color: #e89719; }
+  100% {
+    text-shadow: 2px 1px #b3e888, 2px 1px #e89719, 2px 1px #ffd24f; } }
+  .bg-out .text-form {
+    margin-bottom: 0px !important;
+    margin-top: 7px;
+    font-size: 20px;
+    margin-top: 0px;
+    font-size: 2.5rem;
+    color: white; }
+
+.border-right {
+  border-left: 5px solid rgba(0, 173, 236, 0.85); }
+
+.bg-content .content-left {
+  border: 1px solid #dfe2e6;
+  border-right: 5px solid rgba(0, 173, 236, 0.85);
+  border-radius: 8px; }
+
+/*# sourceMappingURL=style.css.map */

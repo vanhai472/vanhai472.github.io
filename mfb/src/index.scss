@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+p {
+  margin-bottom: 0;
+}
+
+.link-help {
+  color: chartreuse;
+}
+
+.title-pane {
+  font-size: larger;
+  font-weight: 700;
+  font-family: serif;
+  color: cornflowerblue;
+  letter-spacing: -0.5px;
+  text-align: left;
+}
+
+.ant-calendar-picker-input.ant-input {
+  border-radius: 20px !important;
+  border: 0 !important;
+  background-color: #d4d6ffbf !important;
+}
+
+.input-blue {
+  border-radius: 20px !important;
+  border: 0 !important;
+  background-color: #d4d6ffbf !important;
+}
+.span-signup {
+  color: cornflowerblue;
+  font-weight: 700;
+  cursor: pointer;
+  float: right;
+}
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}

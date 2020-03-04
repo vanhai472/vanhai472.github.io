@@ -1,0 +1,246 @@
+@font-face{
+    font-family: Dancing;
+    src: url("fonts/DancingScript-Regular.ttf");
+}
+//font-family: 'Dancing Script', cursive;
+*{
+    margin: 0;
+    padding: 0;
+}
+$yellow:#e89719;
+$green: black;
+$color: red;
+$white: white;
+$bghappy: #0e3018;
+body{
+    color: $green;
+}
+.container{
+    width: 1140px;
+    margin: 0 auto;
+    
+}
+.clearfix{
+    content: "";
+    display: table;
+    clear: both;
+}
+.font-text{
+    font-family: Dancing;
+}
+.backg-social{
+    .social{
+        .item-social{
+            margin:0px 15px;        //margin-right -left và hover của item-media social   
+        }
+        .item-social:hover{
+            width: 48px;
+            height: 45px;
+        }
+    }
+    .logo{
+        .logo-REACH{
+            width: 100px;
+        }
+        .we-love{
+            color: #007784;
+            font-family: Dancing;
+            margin-bottom: 0px !important;
+        }
+            .heart {
+                position: relative;
+                width: 30px;
+                height: 50px;
+                margin-bottom: 10px;
+                right: 366px;
+                font-size: 50px;
+                color: red;
+                 animation: heart 8s infinite; 
+                 @keyframes heart {
+                    0% {font-size: 50px;}
+                    25%{font-size: 55px;}
+                    50%{font-size: 50px;}
+                    75%{ font-size: 55px;}
+                    100% {font-size: 50px;}
+                  }
+              }
+            //   #heart:before,
+            //   #heart:after {
+            //     position: absolute;
+            //     content: "";
+            //     left: 30px;
+            //     top: 0;
+            //     width: 30px;
+            //     height: 48px;
+
+                // background: red;
+
+                // border-radius: 50px 50px 0 0;
+                // transform: rotate(-45deg);
+                // transform-origin: 0 100%;
+
+              }
+            //   animation: mychange 2s infinite;
+            //   animation-timing-function: linear;
+            //   @keyframes mychange {
+            //     from {color: $color;}
+            //     to {color: $yellow;}
+            //   }
+            //   #heart:after {
+            //     left: 0;
+            //     transform: rotate(45deg);
+            //     transform-origin: 100% 100%;
+            //   }
+        }
+
+
+    .item-overcome{                 // text lời chúc bên trái
+
+        border: 1px solid wheat;
+        width: 100%;
+        margin-bottom: 10px;
+        h3{
+           
+        }
+    }
+    .tab-news{
+        bottom: 0px;
+        border: none;
+    }
+
+.wishes{    
+    position: relative;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    top: 0px;       
+
+    border-radius: 8px;
+       //from gi lời chúc bên phải
+    form{
+        border: 1px solid wheat;
+      //color:  #e89719; 
+        label{
+            display: block;     
+            padding-left: 20px;
+            margin-bottom: 0px !important;
+            margin-top: 12px;
+
+            .mr-top{
+                margin-top: 0px;
+                font-size: 2.5rem;
+                color: $white;
+                
+            }
+
+        }
+        .first-top{
+            margin-top: 0px;
+        }
+        input{
+            border-radius: 8px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 1px solid #887463;
+            padding: 5px 300px 5px 23px;
+            width: 100%;
+
+        }
+        .Figure{
+            width: 100%;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 1px solid #887463;
+            padding: 5px 300px 5px 23px;
+            border-radius: 8px;
+
+            option{
+                background: #ffd24f;
+                border-radius: 8px;
+            }
+        }
+        .the-course{
+            width: 100%;
+            .secound{
+
+            }
+        }
+        .item-role{
+            margin-left: 20px;
+
+        }
+        textarea{
+            font-family: Dancing;
+            border-radius: 8px;
+            padding-left: 23px;
+            border-top: none;
+            border: 1px solid #887463;
+            width: 100%;
+            font-size: 25px;
+        }
+        button{
+            width: 70%;
+            margin-bottom: 20px;
+            padding: 3px 0;
+            border: none;
+            border-radius: 5px;
+            background: rgba(0,173, 236, 0.85) !important;
+            width: 100%;
+        }
+       
+    }
+
+}
+.bg-out{
+    background: rgba(0,173, 236, 0.85);
+   
+    .happy{       
+        border-radius: 8px;
+        position: sticky;
+        #happy-teacher{
+            text-shadow: 3px 2px #b3e888, 3px 2px #e89719, 3px 2px #ffd24f;
+            animation-name: example;
+            animation: myanimation 8s infinite;                    //animation color HAPPY TEACHER
+            
+            color: $white;
+            
+            @keyframes myanimation {
+                0% {text-shadow: 2px 1px #b3e888, 2px 1px #e89719, 2px 1px #ffd24f;}
+                25%{text-shadow: 4px 2px green, 4px 2px rgb(12, 162, 212), 4px 2px red; color: #b32317;}
+                50%{text-shadow: 2px 1px #b3e888, 2px 1px #e89719, 2px 1px #ffd24f;}
+                75%{text-shadow: 4px 2px green, 4px 2px rgb(12, 162, 212), 4px 2px red; color: #e89719;}
+                100% {text-shadow: 2px 1px #b3e888, 2px 1px #e89719, 2px 1px #ffd24f;}
+              }
+            
+        }
+}
+.text-form{
+    
+ 
+    
+    margin-bottom: 0px !important; 
+    margin-top: 7px;
+    font-size: 20px;
+   
+        margin-top: 0px;
+        font-size: 2.5rem;
+        color: $white;
+        
+    
+}
+}
+.border-right{
+    border-left: 5px solid rgba(0,173, 236, 0.85);
+    
+}
+.bg-content{
+    .content-left{
+        border: 1px solid #dfe2e6;
+        border-right: 5px solid rgba(0,173, 236, 0.85);
+        border-radius: 8px;
+    }
+}
+
+
