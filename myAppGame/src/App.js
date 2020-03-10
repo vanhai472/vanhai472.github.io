@@ -4,7 +4,7 @@ import NormalLoginForm from "./components/Login";
 import About from "./components/about";
 import DetailGame from "./components/DetailGame";
 
-const App = () => {
+const App = () => { 
   return (
     <Router>
       <Route path="/" exact component={NormalLoginForm} name="Login" />
