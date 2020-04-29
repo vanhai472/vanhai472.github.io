@@ -1,0 +1,32 @@
+.isomorphicSidebar {
+  height: 100vh;
+  overflow: auto;
+  position: fixed;
+  left: 0;
+
+  .isoLogoWrapper {
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    background: #001529;
+
+    a {
+      color: #fff;
+    }
+  }
+
+  .dashboardMenu {
+    .isMenuIcon {
+      font-size: 18px !important;
+      padding-right: 15px;
+    }
+  }
+}
+
+.textMenu {
+  text-transform: capitalize;
+  color: #fff;
+  font-size: 14px;
+}

@@ -1,0 +1,7 @@
+node_modules/
+static/sw.js
+.dist
+*-error.log
+*lock.json
+yarn.lock
+.idea

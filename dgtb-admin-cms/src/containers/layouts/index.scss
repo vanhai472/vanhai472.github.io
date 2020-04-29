@@ -1,0 +1,30 @@
+.ant-layout-header {
+  background: #fff;
+  color: #000;
+}
+
+.ant-layout-content {
+  color: #f000;
+  min-height: 120px;
+}
+
+.isomorphicLayout {
+  margin-left: 200px;
+  transition-duration: 0.1s;
+  transition-property: all;
+  transition-timing-function: linear;
+}
+
+.isomorphicLayoutCol {
+  margin-left: 80px;
+  transition-duration: 0.09s;
+  transition-property: all;
+  transition-timing-function: linear;
+  transition-delay: 0.1s;
+}
+
+@media only screen and (max-width:767px) {
+  .isomorphicLayoutCol {
+    margin-left: 0
+  }
+}

@@ -1,0 +1,21 @@
+.checkRole {
+    .ant-list-item-meta {
+        flex: none;
+        width: 100%;
+        justify-content: flex-end;
+
+        .ant-list-item-meta-avatar {
+            order: 1;
+            margin-left: 16px;
+            margin-right: 0;
+        }
+
+        .ant-list-item-meta-content {
+            flex: none;
+        }
+
+        .ant-list-item-meta-title {
+            text-align: right;
+        }
+    }
+}

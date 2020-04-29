@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var API_TIMEOUT = 15000;","map":{"version":3,"sources":["C:/Users/vuhon/Desktop/dgtb_user/src/redux/constants/api.js"],"names":["API_TIMEOUT"],"mappings":"AAAA,OAAO,IAAMA,WAAW,GAAG,KAApB","sourcesContent":["export const API_TIMEOUT = 15000;\r\n"]},"metadata":{},"sourceType":"module"}

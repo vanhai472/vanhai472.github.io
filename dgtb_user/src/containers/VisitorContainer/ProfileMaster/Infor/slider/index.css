@@ -1,0 +1,39 @@
+.imgTop {
+	width: 100%;
+	height: 440px;
+	border-radius: 8px;
+}
+.imgBottom {
+	width: 200px;
+	height: 113px;
+	border-radius: 8px;
+}
+.alice-carousel ~ ul {
+	padding: 0px !important;
+	margin: 16px 0px;
+}
+.slider-master > ul > span {
+	margin: 0px 6px !important;
+}
+.slider-master > ul > span:first-child {
+	margin-left: 0px !important;
+}
+
+.slider-master > ul > span:last-child {
+	margin-right: 0px !important;
+}
+.buttonChangeSlide {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	position: absolute;
+	top: 40%;
+	transform: translateY(-50%);
+	cursor: pointer;
+}
+.prev {
+	left: 16px;
+}
+.next {
+	right: 16px;
+}
