@@ -1,0 +1,21 @@
+{
+    "plugins": [
+        [
+            "module-resolver",
+            {
+                "root": ["./"],
+                "alias": {
+                    "@Config": "./src/config",
+                    "@Actions": "./src/redux/actions",
+                    "@Components": "./src/components",
+                    "@Container": "./src/containers",
+                    "@Reducer": "./src/redux/reducers",
+                    "@Layout": "./src/layout",
+                    "@Page": "./src/page"
+                },
+                "extensions": [".js", ".jsx", ".json"]
+            }
+        ],
+        ["babel-plugin-styled-components"]
+    ]
+}

@@ -1,0 +1,93 @@
+@font-face {
+  font-family: "NotoSans";
+  src: url("/fonts/NotoSans.ttf");
+}
+@font-face {
+  font-family: "Tohoma";
+  src: url("/fonts/Tahoma.ttf");
+}
+
+.App {
+  width: 290px;
+  height: 330px;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid #eaedf3;
+  margin-top: 100px;
+}
+.wraper-content {
+}
+.wraper-title {
+  font-family: "NotoSans";
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.real-time {
+  color: #5ece4f;
+  font-weight: 600;
+}
+.searcher {
+  margin-left: 5px;
+  font-weight: 600;
+  color: #494949;
+}
+a {
+  text-decoration: none;
+  font-family: "Tohoma";
+  color: #acacac !important;
+  font-weight: 300;
+}
+.tab {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5px;
+  font-family: "NotoSans";
+}
+.tab-item {
+  background: #f9fafc;
+  width: 50%;
+  border: 1px solid #eaedf3;
+  color: #222222;
+  text-align: center;
+  cursor: pointer;
+}
+.active {
+  background: #fff;
+}
+.show-data {
+  border-bottom: 1px solid #f6f7f9;
+  padding-top: 5px;
+}
+.show-date {
+  margin-top: 6px;
+  height: 220px;
+  font-size: 15px;
+  font-family: "Tohoma";
+}
+.wraper-data-item {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+.li-number {
+  list-style-type: none;
+  position: relative;
+}
+.ol {
+  padding-left: 1px;
+  margin-bottom: 5px;
+}
+.img {
+  position: absolute;
+  right: 33px;
+}
+li {
+  list-style-type: none;
+  width: 100%;
+  margin-left: 5px;
+}
+.resultNumber {
+  font-family: "Tohoma";
+  font-weight: 300;
+}

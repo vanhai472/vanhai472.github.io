@@ -1,0 +1,59 @@
+.form-comfirm {
+  width: 272px;
+  height: 401px;
+  box-shadow: 4px 16px 32px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  position: relative;
+  background: #fff;
+
+  & > img {
+    position: absolute;
+    top: 20.5px;
+    right: 20.5px;
+  }
+}
+
+.title-login {
+  font-family: "ArtelyInks";
+  font-style: italic;
+  font-weight: 1;
+  font-size: 36px;
+  line-height: 36px;
+  padding: 20px 0px 16px 16px;
+}
+.container-login {
+  padding: 0px 16px 0px 16px;
+}
+.input-phone {
+  margin-bottom: 4px;
+}
+.input-password {
+  margin-top: 20px;
+}
+.btn-login {
+  margin: 32px 0px 0px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+.sign-content {
+  width: 116px;
+  height: 40px !important;
+  border-radius: 12px !important;
+  font-family: "Roboto-Medium";
+  text-transform: capitalize;
+  font-weight: 500;
+  line-height: 16px;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+}
+.input-phone {
+  color: #6e6c7e;
+  font-family: "Roboto-Regular";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+}

@@ -1,0 +1,40 @@
+.notification {
+    height: 564px;
+    width: 351px;
+}
+
+.notification-option {
+    height: 32px;
+    width: 32px;
+    background: #e0e0e0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.notification-option-select {
+    width: 262px;
+    height: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.notification-option-select > .ant-dropdown-menu-item {
+    width: 100%;
+}
+
+.notification-option-select > .ant-dropdown-menu-item > img {
+    margin: 0 12px;
+}
+
+.notification-option-select > .ant-dropdown-menu-item > span {
+    color: #0e0841;
+    font-family: "Roboto-Regular";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+}
